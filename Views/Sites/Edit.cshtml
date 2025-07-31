@@ -1,0 +1,22 @@
+﻿@model UniversalDashboard.Models.SiteConnection
+@{
+    ViewData["Title"] = "Edit Site";
+}
+<h2>Edit Site</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>API URL</label>
+        <input asp-for="ApiUrl" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label>API Key</label>
+        <input asp-for="ApiKey" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+    <a href="/Sites" class="btn btn-secondary mt-2">Cancel</a>
+</form>

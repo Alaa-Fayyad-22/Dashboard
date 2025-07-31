@@ -1,0 +1,222 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    var roleLevel = Context.Session.GetInt32("RoleLevel");
+    var selectedSiteId = ViewBag.SelectedSiteId as int?;
+    var sites = ViewBag.Sites as List<UniversalDashboard.Models.SiteConnection>;
+}
+
+@using Newtonsoft.Json
+
+<div class="dashboard-card animate__animated animate__fadeInUp text-center">
+   
+    @if (roleLevel == 1)
+    {
+        <form method="get" asp-action="Index" class="mb-4">
+            <select name="siteId" class="form-control" style="width: 250px; display: inline-block;">
+                <option value="">-- Select Site --</option>
+                @foreach (var site in sites)
+                {
+                    if (selectedSiteId == site.Id)
+                    {
+                        <option value="@site.Id" selected>@site.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@site.Id">@site.Name</option>
+                    }
+                }
+            </select>
+            <button type="submit" class="btn btn-primary">Show</button>
+        </form>
+
+       
+    }
+    else
+    {
+        <div class="mb-3"><h2> @sites.FirstOrDefault(s => s.Id == selectedSiteId)?.Name </h2></div>
+    }
+
+    <h3>Dashboard Overview</h3>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <div class="dashboard-summary-card">
+                <div class="dashboard-label">Revenue</div>
+                <div class="dashboard-value">$@ViewBag.TotalRevenue</div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="dashboard-summary-card">
+                <div class="dashboard-label">Profit</div>
+                <div class="dashboard-value">$@ViewBag.TotalProfit</div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="dashboard-summary-card">
+                <div class="dashboard-label">Pending Shipments</div>
+                <div class="dashboard-value">@ViewBag.PendingShipments</div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="dashboard-summary-card">
+                <div class="dashboard-label">Low Stock Items</div>
+                <div class="dashboard-value">@ViewBag.LowStock</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-5">
+            <div class="card p-3">
+                <h4 class="mb-3">Revenue - Last 7 Days</h4>
+                <canvas id="revenueChart" style="height:280px;"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="card p-3">
+                <h4 class="mb-3">Orders - Last 7 Days</h4>
+                <canvas id="ordersChart" style="height:280px;"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="align-items:stretch;">
+        <!-- Left side (one big card) -->
+        <div class="col-md-6 mb-5 d-flex">
+            <div class="card p-3 flex-fill d-flex flex-column justify-content-between" style="height:100%;">
+                <h4 class="mb-3">Orders by Status</h4>
+                <canvas id="statusChart" ></canvas>
+            </div>
+        </div>
+        <!-- Right side (two stacked cards) -->
+        <div class="col-md-6 mb-5 d-flex flex-column">
+            <div class="card p-3 mb-4 flex-fill">
+                <h4 class="mb-3">Best-Selling Products</h4>
+                <canvas id="topProductsChart" style="min-height:160px;"></canvas>
+            </div>
+            <div class="card p-3 flex-fill">
+                <h4 class="mb-3">New Customers - Last 7 Days</h4>
+                <canvas id="newCustomersChart" style="min-height:160px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<h4>Low Stock Products</h4>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr><th>Name</th><th>Qty</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var p in (ViewBag.LowStockProducts as List<UniversalDashboard.Models.Product> ?? new List<UniversalDashboard.Models.Product>()))
+        {
+            <tr>
+                <td>@p.Title</td>
+                <td>@p.Quantity</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var revenueLabels = @Html.Raw(JsonConvert.SerializeObject(ViewBag.Dates));
+        var revenueData = @Html.Raw(JsonConvert.SerializeObject(ViewBag.DailyRevenue));
+        var orderData = @Html.Raw(JsonConvert.SerializeObject(ViewBag.DailyOrders));
+        var statusLabels = @Html.Raw(JsonConvert.SerializeObject(ViewBag.OrderStatusLabels));
+        var statusCounts = @Html.Raw(JsonConvert.SerializeObject(ViewBag.OrderStatusCounts));
+        var topProductLabels = @Html.Raw(JsonConvert.SerializeObject(ViewBag.TopProductNames));
+        var topProductCounts = @Html.Raw(JsonConvert.SerializeObject(ViewBag.TopProductCounts));
+        var customerLabels = @Html.Raw(JsonConvert.SerializeObject(ViewBag.Dates));
+        var customerData = @Html.Raw(JsonConvert.SerializeObject(ViewBag.DailyNewCustomers));
+
+
+        // Revenue Line Chart
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'line',
+            data: {
+                labels: revenueLabels,
+                datasets: [{
+                    label: 'Revenue',
+                    data: revenueData,
+                    borderColor: '#4184e3',
+                    backgroundColor: 'rgba(65,132,227,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                }]
+            }
+        });
+
+        // Orders Bar Chart
+        new Chart(document.getElementById('ordersChart'), {
+            type: 'bar',
+            data: {
+                labels: revenueLabels,
+                datasets: [{
+                    label: 'Orders',
+                    data: orderData,
+                    backgroundColor: 'rgba(65,132,227,0.2)',
+                    borderColor: '#4184e3',
+                    borderWidth: 2
+                }]
+            }
+        });
+
+        // Orders by Status (Pie)
+        new Chart(document.getElementById('statusChart'), {
+            type: 'doughnut',
+            data: {
+                labels: statusLabels,
+                datasets: [{
+                    data: statusCounts,
+                    borderWidth: 1,
+                }]
+            }
+        });
+
+        // Best-Selling Products (Bar)
+        new Chart(document.getElementById('topProductsChart'), {
+            type: 'bar',
+            data: {
+                labels: topProductLabels,
+                datasets: [{
+                    label: 'Units Sold',
+                    data: topProductCounts,
+                    backgroundColor: 'rgba(65,132,227,0.2)',
+                    borderColor: '#4184e3',
+                    borderWidth: 2
+                }]
+            }
+        });
+
+        // New Customers (Line)
+
+        new Chart(document.getElementById('newCustomersChart'), {
+            type: 'line',
+            data: {
+                labels: customerLabels,
+                datasets: [{
+                    label: 'New Customers',
+                    data: customerData,
+                    borderColor: '#ffb347',
+                    backgroundColor: 'rgba(255,179,71,0.1)',
+                    tension: 0.3,
+                    fill: true,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+}
+
+
+

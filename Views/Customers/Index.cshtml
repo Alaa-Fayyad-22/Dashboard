@@ -1,0 +1,64 @@
+﻿@model IEnumerable<UniversalDashboard.Models.Customer>
+@{
+    ViewData["Title"] = "Customers";
+    var roleLevel = Context.Session.GetInt32("RoleLevel");
+    var selectedSiteId = ViewBag.SelectedSiteId as int?;
+    var sites = ViewBag.Sites as List<UniversalDashboard.Models.SiteConnection>;
+}
+
+<div class="dashboard-card animate__animated animate__fadeInUp">
+    <h2>Customers</h2>
+
+    @if (roleLevel == 1)
+    {
+        <form method="get" asp-action="Index" class="mb-3">
+            <select name="siteId" class="form-control" style="width: 250px; display: inline-block;">
+                <option value="">-- Select Site --</option>
+                @foreach (var site in sites)
+                {
+                    if (selectedSiteId == site.Id)
+                    {
+                        <option value="@site.Id" selected>@site.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@site.Id">@site.Name</option>
+                    }
+                }
+            </select>
+            <button type="submit" class="btn btn-primary">View Customers</button>
+        </form>
+    }
+    else
+    {
+        <div class="mb-3"><strong>Site:</strong> @sites.FirstOrDefault(s => s.Id == selectedSiteId)?.Name</div>
+    }
+    @if (Model.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Joined On</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Email</td>
+                    <td>@c.Username</td>
+                    <td>@c.Created_Date</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+    else if (selectedSiteId != null)
+    {
+        <div class="alert alert-info">No customers found or unable to fetch customers.</div>
+    }
+</div>

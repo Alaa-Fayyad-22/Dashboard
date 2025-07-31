@@ -1,0 +1,77 @@
+﻿@model IEnumerable<UniversalDashboard.Models.Order>
+@{
+    ViewData["Title"] = "Orders";
+    var roleLevel = Context.Session.GetInt32("RoleLevel");
+    var selectedSiteId = ViewBag.SelectedSiteId as int?;
+    var sites = ViewBag.Sites as List<UniversalDashboard.Models.SiteConnection>;
+    var products = ViewBag.Products as List<UniversalDashboard.Models.Product>;
+
+}
+<h2>Orders</h2>
+@if (roleLevel == 1)
+{
+    <form method="get" asp-action="Index" class="mb-3">
+        <select name="siteId" class="form-control" style="width: 250px; display: inline-block;">
+            <option value="">-- Select Site --</option>
+            @foreach (var site in sites)
+            {
+                if (selectedSiteId == site.Id)
+                {
+                    <option value="@site.Id" selected="selected">@site.Name</option>
+                }
+                else
+                {
+                    <option value="@site.Id">@site.Name</option>
+                }
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">View Orders</button>
+    </form>
+}
+else
+{
+    <div class="mb-3"><strong>Site:</strong> @sites.FirstOrDefault(s => s.Id == selectedSiteId)?.Name</div>
+}
+@if (Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>User ID</th>
+                <th>Date</th>
+                <th>Products</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var o in Model)
+        {
+            <tr>
+                <td>@o.Id</td>
+                <td>@o.UserId</td>
+                <td>@o.Date</td>
+                <td>
+                    @foreach (var p in o.Products)
+                    {
+                        <span>Product @p.ProductId (@p.Quantity)</span><br />
+
+                    }
+                </td>
+                <td>@o.Total</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else if (selectedSiteId != null)
+{
+    <div class="alert alert-info">No orders found or unable to fetch orders.</div>
+}
+
+<div class="row align-content-center">
+    <div class="col"><div class="dashboard-summary-card">Revenue: $@ViewBag.TotalRevenue</div></div>
+    <div class="col"><div class="dashboard-summary-card">Orders: @ViewBag.TotalOrders</div></div>
+    <div class="col"><div class="dashboard-summary-card">Profit: $@ViewBag.TotalProfit</div></div>
+
+</div>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<UniversalDashboard.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+    var roleLevel = Context.Session.GetInt32("RoleLevel");
+    var selectedSiteId = ViewBag.SelectedSiteId as int?;
+    var sites = ViewBag.Sites as List<UniversalDashboard.Models.SiteConnection>;
+}
+<h2>Products</h2>
+@if (roleLevel == 1)
+{
+    <form method="get" asp-action="Index" class="mb-3">
+        <select name="siteId" class="form-control" style="width: 250px; display: inline-block;">
+            <option value="">-- Select Site --</option>
+            @foreach (var site in sites)
+            {
+                if (selectedSiteId == site.Id)
+                {
+                    <option value="@site.Id" selected="selected">@site.Name</option>
+                }
+                else
+                {
+                    <option value="@site.Id">@site.Name</option>
+                }
+            }
+        </select>
+        <button type="submit" class="btn btn-primary">View Products</button>
+    </form>
+}
+else
+{
+    <div class="mb-3"><strong>Site:</strong> @sites.FirstOrDefault(s => s.Id == selectedSiteId)?.Name</div>
+}
+@if (Model.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Cost Price</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Title</td>
+                <td>@p.CostPrice</td>
+                <td>@p.Price</td>
+                <td>@p.Description</td>
+                <td>@p.Quantity</td>
+                <td>@p.Category</td>
+                <td><img src="@p.Image" width="60" /></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else if (selectedSiteId != null)
+{
+    <div class="alert alert-info">No products found or unable to fetch products.</div>
+}
