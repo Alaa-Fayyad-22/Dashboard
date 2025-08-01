@@ -1,21 +1,31 @@
 using Microsoft.EntityFrameworkCore;
 using UniversalDashboard.Data;
 using UniversalDashboard.Services;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
-        new MySqlServerVersion(new Version(8, 0, 21))
-    )
-);
 
-// Add session support
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+if (string.IsNullOrWhiteSpace(connectionString))
+{
+    Console.WriteLine("ERROR: DefaultConnection string is missing.");
+}
+else
+{
+    Console.WriteLine("DefaultConnection loaded.");
+}
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(60); // Adjust as needed
+    options.IdleTimeout = TimeSpan.FromMinutes(60); // Session timeout
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
@@ -36,9 +46,8 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// Enable session BEFORE Authorization
-app.UseSession();
 
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(
