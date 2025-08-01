@@ -49,46 +49,81 @@ public class OrdersController : Controller
         ViewBag.SelectedSiteId = siteId;
 
         var site = sites.First(s => s.Id == siteId);
-        using var client = new HttpClient();
-        client.BaseAddress = new System.Uri(site.ApiUrl);
-        if (!string.IsNullOrWhiteSpace(site.ApiKey))
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
-
-        var response = await client.GetAsync("orders");
-        var json = await response.Content.ReadAsStringAsync();
-        var orders = JsonConvert.DeserializeObject<List<Order>>(json);
-
-        // Fetch products from the API
-        var productsResponse = await client.GetAsync("products");
-        var productsJson = await productsResponse.Content.ReadAsStringAsync();
-        var products = JsonConvert.DeserializeObject<List<Product>>(productsJson);
-
-        ViewBag.Products = products;
-
-        ViewBag.TotalRevenue = orders.Sum(o => o.Total);
-        ViewBag.TotalOrders = orders.Count;
-        decimal profit = 0;
-        decimal costprice = 0;
-        foreach (var order in orders)
+        try
         {
-            if (order.Products == null) continue;
-            foreach (var op in order.Products)
+            using var client = new HttpClient();
+            client.BaseAddress = new System.Uri(site.ApiUrl);
+            if (!string.IsNullOrWhiteSpace(site.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
+
+            // Fetch orders
+            var response = await client.GetAsync("orders");
+            if (!response.IsSuccessStatusCode)
             {
-                var product = products.FirstOrDefault(p => p.Id == op.ProductId);
-                if (product != null && product.CostPrice != null)
+                ViewBag.Error = $"Failed to fetch orders from {site.Name}. (Status: {response.StatusCode})";
+                return View(new List<Order>());
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var orders = JsonConvert.DeserializeObject<List<Order>>(json) ?? new List<Order>();
+
+            if (!orders.Any())
+            {
+                ViewBag.Error = "No orders found for this site.";
+                return View(new List<Order>());
+            }
+
+            // Fetch products
+            var productsResponse = await client.GetAsync("products");
+            if (!productsResponse.IsSuccessStatusCode)
+            {
+                ViewBag.Error = $"Orders loaded, but failed to fetch products. (Status: {productsResponse.StatusCode})";
+                ViewBag.Products = new List<Product>();
+            }
+            else
+            {
+                var productsJson = await productsResponse.Content.ReadAsStringAsync();
+                ViewBag.Products = JsonConvert.DeserializeObject<List<Product>>(productsJson) ?? new List<Product>();
+            }
+
+            // Calculate totals
+            ViewBag.TotalRevenue = orders.Sum(o => o.Total);
+            ViewBag.TotalOrders = orders.Count;
+
+            decimal profit = 0;
+            decimal costprice = 0;
+
+            if (ViewBag.Products is List<Product> products)
+            {
+                foreach (var order in orders)
                 {
-                    profit += (product.Price - product.CostPrice.Value) * op.Quantity;
-                    costprice = product.CostPrice.Value;
+                    if (order.Products == null) continue;
+                    foreach (var op in order.Products)
+                    {
+                        var product = products.FirstOrDefault(p => p.Id == op.ProductId);
+                        if (product != null && product.CostPrice != null)
+                        {
+                            profit += (product.Price - product.CostPrice.Value) * op.Quantity;
+                            costprice = product.CostPrice.Value;
+                        }
+                    }
                 }
             }
+
+            ViewBag.TotalProfit = profit;
+            ViewBag.CostPrice = costprice;
+
+            return View(orders);
         }
-
-        ViewBag.TotalProfit = profit;
-        ViewBag.costprice = costprice;
-        
-
-
-        ViewBag.SelectedSiteId = siteId;
-        return View(orders);
+        catch (HttpRequestException)
+        {
+            ViewBag.Error = $"Could not connect to the API at {site.ApiUrl}. Please check the URL or try again later.";
+            return View(new List<Order>());
+        }
+        catch (System.Exception ex)
+        {
+            ViewBag.Error = $"An unexpected error occurred: {ex.Message}";
+            return View(new List<Order>());
+        }
     }
 }

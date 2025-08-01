@@ -49,16 +49,43 @@ public class ProductsController : Controller
             ViewBag.SelectedSiteId = siteId;
 
         var site = sites.First(s => s.Id == siteId);
-        using var client = new HttpClient();
-        client.BaseAddress = new System.Uri(site.ApiUrl);
-        if (!string.IsNullOrWhiteSpace(site.ApiKey))
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
 
-        var response = await client.GetAsync("products");
-        var json = await response.Content.ReadAsStringAsync();
-        var products = JsonConvert.DeserializeObject<List<Product>>(json);
+        try
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new System.Uri(site.ApiUrl);
 
-        ViewBag.SelectedSiteId = siteId;
-        return View(products);
+            if (!string.IsNullOrWhiteSpace(site.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
+
+            var response = await client.GetAsync("products");
+
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Error = $"Failed to fetch products from {site.Name}. (Status: {response.StatusCode})";
+                return View(new List<Product>());
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var products = JsonConvert.DeserializeObject<List<Product>>(json) ?? new List<Product>();
+
+            if (!products.Any())
+            {
+                ViewBag.Error = "No products found for this site.";
+                return View(new List<Product>());
+            }
+
+            return View(products);
+        }
+        catch (HttpRequestException)
+        {
+            ViewBag.Error = $"Could not connect to the API at {site.ApiUrl}. Please check the URL or try again later.";
+            return View(new List<Product>());
+        }
+        catch (System.Exception ex)
+        {
+            ViewBag.Error = $"An unexpected error occurred: {ex.Message}";
+            return View(new List<Product>());
+        }
     }
 }

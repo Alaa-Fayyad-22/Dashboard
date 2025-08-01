@@ -52,17 +52,42 @@ public class CustomersController : Controller
         ViewBag.SelectedSiteId = siteId;
 
         var site = sites.First(s => s.Id == siteId);
-        using var client = new HttpClient();
-        client.BaseAddress = new System.Uri(site.ApiUrl);
-        if (!string.IsNullOrWhiteSpace(site.ApiKey))
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
+        try
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new System.Uri(site.ApiUrl);
+            if (!string.IsNullOrWhiteSpace(site.ApiKey))
+                client.DefaultRequestHeaders.Add("Authorization", $"Bearer {site.ApiKey}");
 
-        // The endpoint might be "customers", "users", or something else—adjust as needed
-        var response = await client.GetAsync("customers");
-        var json = await response.Content.ReadAsStringAsync();
-        var customers = JsonConvert.DeserializeObject<List<Customer>>(json);
+            // Call the customers endpoint
+            var response = await client.GetAsync("customers");
 
-        ViewBag.SelectedSiteId = siteId;
-        return View(customers);
+            if (!response.IsSuccessStatusCode)
+            {
+                ViewBag.Error = $"Failed to fetch data from {site.Name}. (Status: {response.StatusCode})";
+                return View(new List<Customer>());
+            }
+
+            var json = await response.Content.ReadAsStringAsync();
+            var customers = JsonConvert.DeserializeObject<List<Customer>>(json) ?? new List<Customer>();
+
+            if (!customers.Any())
+            {
+                ViewBag.Error = "No customers found for this site.";
+                return View(new List<Customer>());
+            }
+
+            return View(customers);
+        }
+        catch (HttpRequestException)
+        {
+            ViewBag.Error = $"Could not connect to the API at {site.ApiUrl}. Please check the URL or try again later.";
+            return View(new List<Customer>());
+        }
+        catch (Exception ex)
+        {
+            ViewBag.Error = $"An unexpected error occurred: {ex.Message}";
+            return View(new List<Customer>());
+        }
     }
 }

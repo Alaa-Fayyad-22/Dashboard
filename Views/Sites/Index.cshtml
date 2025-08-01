@@ -22,7 +22,7 @@
         <tr>
             <th>Name</th>
             <th>API URL</th>
-            <th>API Key</th>
+            <th>API Endpoint</th>
             <th>API Key</th>
             <th></th>
         </tr>
@@ -37,7 +37,7 @@
                 <td>@site.ApiKey</td>
                 <td>
                     <a href="/Sites/CheckApiPerformance/@site.Id" class="btn btn-warning btn-sm">Check Performance</a>
-                    <a class="btn btn-warning btn-sm" asp-action="SyncSite" asp-route-id="@site.Id">Sync</a>
+                    @* <a class="btn btn-warning btn-sm" asp-action="SyncSite" asp-route-id="@site.Id">Sync</a> *@
                     <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@site.Id">Edit</a>
                     <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@site.Id">Delete</a>
                 </td>
