@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using UniversalDashboard.Data;
+using UniversalDashboard.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
+
+builder.Services.AddHttpClient<ApiService>();
+builder.Services.AddHostedService<SiteSyncService>();
 
 var app = builder.Build();
 

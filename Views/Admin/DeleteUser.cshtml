@@ -1,0 +1,14 @@
+﻿@model UniversalDashboard.Models.User
+@{
+    ViewData["Title"] = "Delete User";
+}
+
+<h2>Delete User</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete user <b>@Model.Username</b>?
+</div>
+<form asp-action="DeleteUser" asp-controller="Admin" method="post">
+    <input asp-for="Id" type="hidden" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Users" class="btn btn-secondary">Cancel</a>
+</form>

@@ -3,6 +3,19 @@
     ViewData["Title"] = "Connected Sites";
 }
 <h2>Connected Sites</h2>
+
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+
+
 <a class="btn btn-success mb-3" href="/Sites/Create">Add New Site</a>
 <table class="table table-striped">
     <thead>
@@ -21,8 +34,10 @@
                 <td>@site.ApiUrl</td>
                 <td>@site.ApiKey</td>
                 <td>
-                    <a class="btn btn-primary btn-sm" href="/Sites/Edit/@site.Id">Edit</a>
-                    <a class="btn btn-danger btn-sm" href="/Sites/Delete/@site.Id">Delete</a>
+                    <a class="btn btn-info btn-sm" asp-action="TestApi" asp-route-id="@site.Id">Test API</a>
+                    <a class="btn btn-warning btn-sm" asp-action="SyncSite" asp-route-id="@site.Id">Sync</a>
+                    <a class="btn btn-secondary btn-sm" asp-action="Edit" asp-route-id="@site.Id">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@site.Id">Delete</a>
                 </td>
             </tr>
         }

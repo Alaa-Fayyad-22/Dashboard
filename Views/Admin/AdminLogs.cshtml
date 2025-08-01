@@ -1,0 +1,63 @@
+﻿@model IEnumerable<UniversalDashboard.Models.AdminLog>
+<h2>Admin & Security Logs</h2>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>When</th>
+                    <th>AdminId</th>
+                    <th>Action</th>
+                    <th>Target</th>
+                    <th>Details</th>
+                    <th>IP</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var log in Model)
+                {
+                    <tr>
+                        <td>@log.Timestamp.ToLocalTime()</td>
+                        <td>@log.AdminId</td>
+                        <td>@log.Action</td>
+                        <td>@log.TargetType @log.TargetId</td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(log.Details))
+                            {
+                                <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#detailsModal-@log.Id">
+                                    View Details
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="detailsModal-@log.Id" tabindex="-1" aria-labelledby="detailsLabel-@log.Id" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="detailsLabel-@log.Id">Log Details (ID: @log.Id)</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <pre class="bg-light p-3 rounded" style="white-space: pre-wrap; max-height: 400px; overflow-y: auto;">
+                                                    @log.Details
+                                                 </pre>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <span>-</span>
+                            }
+                        </td>
+                        <td>@log.IpAddress</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -35,7 +35,7 @@ public class CustomersController : Controller
                 return View(new List<Customer>());
             }
         }
-        else
+        else if (roleLevel == 2 || roleLevel == 3)
         {
             // Admin/User: always use their assigned site
             siteId = userSiteId;
@@ -44,6 +44,10 @@ public class CustomersController : Controller
                 ViewBag.SelectedSiteId = null;
                 return View(new List<Customer>());
             }
+        }
+        else
+        {
+            return RedirectToAction("Login", "Auth");
         }
         ViewBag.SelectedSiteId = siteId;
 

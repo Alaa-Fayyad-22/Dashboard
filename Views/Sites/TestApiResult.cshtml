@@ -1,0 +1,30 @@
+﻿@model List<UniversalDashboard.Models.DTOs.CustomerDto>
+@{
+    ViewData["Title"] = "API Test Results";
+}
+
+<h2>API Test Results</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Username</td>
+                <td>@customer.Email</td>
+                <td>@customer.Created_Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/Sites" class="btn btn-secondary mt-2">Back</a>

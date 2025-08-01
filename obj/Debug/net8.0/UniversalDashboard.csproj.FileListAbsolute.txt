@@ -220,6 +220,7 @@ C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboar
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.RazorAssemblyInfo.cache
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.RazorAssemblyInfo.cs
+C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.sourcelink.json
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\scopedcss\bundle\UniversalDashboard.styles.css
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\scopedcss\projectbundle\UniversalDashboard.bundle.scp.css
@@ -232,10 +233,10 @@ C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets\m
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.UniversalDashboard.props
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.UniversalDashboard.props
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\Universa.268202F9.Up2Date
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.dll
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\refint\UniversalDashboard.dll
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.pdb
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.genruntimeconfig.cache
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\ref\UniversalDashboard.dll
+C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

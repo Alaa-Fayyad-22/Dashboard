@@ -32,7 +32,7 @@ public class ProductsController : Controller
                 return View(new List<Product>());
             }
         }
-        else
+        else if (roleLevel == 2 || roleLevel == 3)
         {
             // Admin/User: force their assigned site
             siteId = userSiteId;
@@ -42,7 +42,11 @@ public class ProductsController : Controller
                 return View(new List<Product>());
             }
         }
-        ViewBag.SelectedSiteId = siteId;
+        else
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+            ViewBag.SelectedSiteId = siteId;
 
         var site = sites.First(s => s.Id == siteId);
         using var client = new HttpClient();

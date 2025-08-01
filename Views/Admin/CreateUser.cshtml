@@ -1,0 +1,38 @@
+﻿@model UniversalDashboard.Models.User
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<h2>Add User</h2>
+<form asp-action="CreateUser" method="post">
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="PasswordHash" class="form-label">Password</label>
+        <input asp-for="PasswordHash" type="password" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label asp-for="RoleLevel" class="form-label"></label>
+        <select asp-for="RoleLevel" class="form-select">
+            <option value="1">SuperAdmin</option>
+            <option value="2">Admin</option>
+            <option value="3">User</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label asp-for="SiteId" class="form-label"></label>
+        <input asp-for="SiteId" class="form-control" />
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="IsActive" class="form-check-input" />
+        <label asp-for="IsActive" class="form-check-label"></label>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+    <a asp-action="Users" class="btn btn-secondary">Cancel</a>
+</form>

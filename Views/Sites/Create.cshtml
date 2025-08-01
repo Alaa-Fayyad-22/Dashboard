@@ -3,7 +3,8 @@
     ViewData["Title"] = "Add Site";
 }
 <h2>Add New Site</h2>
-<form asp-action="Create" method="post">
+<form asp-controller="Sites" asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <label>Name</label>
         <input asp-for="Name" class="form-control" required />

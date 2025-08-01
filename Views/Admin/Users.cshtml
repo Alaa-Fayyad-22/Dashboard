@@ -1,0 +1,40 @@
+﻿@model IEnumerable<UniversalDashboard.Models.User>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2 class="mb-4">Users</h2>
+<a class="btn btn-primary mb-3" href="/Admin/CreateUser">Add User</a>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>SiteId</th>
+            <th>Active</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Username</td>
+                <td>@user.Email</td>
+                <td>@user.RoleLevel</td>
+                <td>@user.SiteId</td>
+                <td>@(user.IsActive ? "Yes" : "No")</td>
+                <td>
+                    <a href="/Admin/EditUser/@user.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <form asp-action="DeleteUser" asp-controller="Admin" method="post" style="display:inline;" onsubmit="return confirm('Delete this user?');">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

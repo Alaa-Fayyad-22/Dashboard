@@ -9,6 +9,8 @@ namespace UniversalDashboard.Data
         public DbSet<SiteConnection> SiteConnections { get; set; }
         public DbSet<DashboardStats> DashboardStats { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<AdminLog> AdminLogs { get; set; }
+
 
     }
 }

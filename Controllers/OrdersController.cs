@@ -32,7 +32,7 @@ public class OrdersController : Controller
                 return View(new List<Order>());
             }
         }
-        else
+        else if (roleLevel == 2 || roleLevel == 3)
         {
             // Admin/User: only their site
             siteId = userSiteId;
@@ -41,6 +41,10 @@ public class OrdersController : Controller
                 ViewBag.SelectedSiteId = null;
                 return View(new List<Order>());
             }
+        }
+        else
+        {
+            return RedirectToAction("Login", "Auth");
         }
         ViewBag.SelectedSiteId = siteId;
 
