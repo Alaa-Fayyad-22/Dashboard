@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\sitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\sitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\models\\siteconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:models\\siteconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\testapiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\testapiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,28 +71,8 @@
       "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\admin\\adminlogs.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\testapiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\testapiresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\admin\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\sitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\sitescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\models\\dto\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,22 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\models\\siteconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:models\\siteconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\views\\sites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|solutionrelative:views\\sites\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2072D4E-0856-4E8E-BDE6-A6ACE1113293}|UniversalDashboard.csproj|c:\\users\\user\\source\\repos\\universaldashboard\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -186,11 +186,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 31,
+          "SelectedChildIndex": 36,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -202,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -214,19 +214,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "TestApiResult.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\TestApiResult.cshtml",
               "RelativeDocumentMoniker": "Views\\Sites\\TestApiResult.cshtml",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\TestApiResult.cshtml",
               "RelativeToolTip": "Views\\Sites\\TestApiResult.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-01T09:20:55.858Z"
+              "WhenOpened": "2025-08-01T09:20:55.858Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "CustomerDto.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Models\\DTO\\CustomerDto.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\CustomerDto.cs",
@@ -238,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "SiteSyncService.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Services\\SiteSyncService.cs",
               "RelativeDocumentMoniker": "Services\\SiteSyncService.cs",
@@ -250,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "ApiService.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Services\\ApiService.cs",
               "RelativeDocumentMoniker": "Services\\ApiService.cs",
@@ -262,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "AdminLogs.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Admin\\AdminLogs.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\AdminLogs.cshtml",
@@ -310,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 17,
               "Title": "CreateUser.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Admin\\CreateUser.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\CreateUser.cshtml",
@@ -340,9 +341,10 @@
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAApwEwAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAMwEwAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T13:41:10.855Z"
+              "WhenOpened": "2025-07-31T13:41:10.855Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -382,15 +384,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 7,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAADgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T13:33:46.708Z"
+              "WhenOpened": "2025-07-30T13:33:46.708Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -502,43 +505,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 1,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Delete.cshtml",
               "RelativeDocumentMoniker": "Views\\Sites\\Delete.cshtml",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Delete.cshtml",
               "RelativeToolTip": "Views\\Sites\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T11:27:25.211Z"
+              "WhenOpened": "2025-07-30T11:27:25.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\Sites\\Edit.cshtml",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Edit.cshtml",
               "RelativeToolTip": "Views\\Sites\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T11:26:50.976Z"
+              "WhenOpened": "2025-07-30T11:26:50.976Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 3,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Create.cshtml",
               "RelativeDocumentMoniker": "Views\\Sites\\Create.cshtml",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Create.cshtml",
               "RelativeToolTip": "Views\\Sites\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T11:25:10.922Z"
+              "WhenOpened": "2025-07-30T11:25:10.922Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "UniversalDashboard.csproj",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\UniversalDashboard.csproj",
               "RelativeDocumentMoniker": "UniversalDashboard.csproj",
@@ -546,12 +552,11 @@
               "RelativeToolTip": "UniversalDashboard.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-30T10:37:46.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T10:37:46.844Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -563,7 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -576,7 +581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
@@ -584,12 +589,11 @@
               "RelativeToolTip": "Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T10:09:21.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-30T10:09:21.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -625,15 +629,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Sites\\Index.cshtml",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Views\\Sites\\Index.cshtml",
               "RelativeToolTip": "Views\\Sites\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-30T09:55:43.074Z"
+              "WhenOpened": "2025-07-30T09:55:43.074Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -661,15 +666,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
               "Title": "SitesController.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Controllers\\SitesController.cs",
               "RelativeDocumentMoniker": "Controllers\\SitesController.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Controllers\\SitesController.cs",
               "RelativeToolTip": "Controllers\\SitesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAMEAAAAAAAAAAAAowMsAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:51:33.933Z"
+              "WhenOpened": "2025-07-30T09:51:33.933Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -709,15 +715,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 5,
               "Title": "SiteConnection.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Models\\SiteConnection.cs",
               "RelativeDocumentMoniker": "Models\\SiteConnection.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\UniversalDashboard\\Models\\SiteConnection.cs",
               "RelativeToolTip": "Models\\SiteConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:49:24.836Z"
+              "WhenOpened": "2025-07-30T09:49:24.836Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -4,6 +4,7 @@ using UniversalDashboard.Data;
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 public class AuthController : Controller
 {
@@ -42,7 +43,14 @@ public class AuthController : Controller
     [HttpPost]
     public IActionResult Login(string username, string password)
     {
-        var user = _context.Users.SingleOrDefault(u => u.Username == username);
+        // Trim the input username
+        var inputUsername = username.Trim();
+        
+
+        // Case-insensitive lookup using PostgreSQL ILIKE
+        var user = _context.Users
+            .FirstOrDefault(u => EF.Functions.ILike(u.Username.Trim(), inputUsername));
+
 
         if (user != null && user.PasswordHash == password && user.IsActive) // Use hashing in prod!
         {

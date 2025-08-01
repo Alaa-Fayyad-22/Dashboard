@@ -160,6 +160,17 @@ public class SitesController : Controller
 
 
 
+    [HttpGet]
+    public IActionResult TestApiForm(int id)
+    {
+        var site = _context.SiteConnections.Find(id);
+        if (site == null) return NotFound();
+        ViewBag.SiteId = id;
+        ViewBag.SiteName = site.Name;
+        return View();
+    }
+
+    [HttpGet]
     public async Task<IActionResult> TestApi(int id)
     {
         var site = _context.SiteConnections.Find(id);
@@ -167,10 +178,9 @@ public class SitesController : Controller
 
         try
         {
-            var response = await _apiService.FetchSiteData(site.ApiUrl, site.ApiKey, "customers");
+            var response = await _apiService.FetchSiteData(site.ApiUrl, site.ApiKey, site.Endpoint ?? "products");
             var customers = JsonSerializer.Deserialize<List<CustomerDto>>(response);
 
-            // Pass customers to a view
             return View("TestApiResult", customers);
         }
         catch (Exception ex)
@@ -180,22 +190,42 @@ public class SitesController : Controller
         }
     }
 
-    // ✅ Manual Sync API
-    public async Task<IActionResult> SyncSite(int id)
+
+
+
+    public async Task<IActionResult> CheckApiPerformance(int id)
     {
         var site = _context.SiteConnections.Find(id);
         if (site == null) return NotFound();
 
         try
         {
-            var data = await _apiService.FetchSiteData(site.ApiUrl, site.ApiKey, "orders"); // Example endpoint
-            TempData["Message"] = $"Sync Successful for {site.Name}: {data}";
+            var endpoint = site.Endpoint ?? "products"; // Hardcoded fallback endpoint
+            var url = $"{site.ApiUrl.TrimEnd('/')}/{endpoint.TrimStart('/')}";
+
+            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            var response = await _apiService.FetchSiteData(site.ApiUrl, site.ApiKey, endpoint);
+            stopwatch.Stop();
+
+            var responseTime = stopwatch.ElapsedMilliseconds;
+
+            ViewBag.ApiName = site.Name;
+            ViewBag.ResponseTime = responseTime;
+            ViewBag.Status = "Success";
+            ViewBag.DataPreview = response.Length > 200 ? response.Substring(0, 200) + "..." : response; // Preview response
+
+            return View("TestApiResult");
         }
         catch (Exception ex)
         {
-            TempData["Error"] = $"Sync Failed for {site.Name}: {ex.Message}";
+            ViewBag.ApiName = site.Name;
+            ViewBag.ResponseTime = -1;
+            ViewBag.Status = $"Failed: {ex.Message}";
+            ViewBag.DataPreview = null;
+            return View("TestApiResult");
         }
-
-        return RedirectToAction(nameof(Index));
     }
+
+
+
 }

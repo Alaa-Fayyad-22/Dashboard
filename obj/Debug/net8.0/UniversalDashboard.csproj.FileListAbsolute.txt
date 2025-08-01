@@ -263,3 +263,4 @@ C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\refint\UniversalD
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.pdb
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\UniversalDashboard.genruntimeconfig.cache
 C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\ref\UniversalDashboard.dll
+C:\Users\user\source\repos\UniversalDashboard\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

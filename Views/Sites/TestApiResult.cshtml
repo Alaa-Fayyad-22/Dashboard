@@ -1,30 +1,20 @@
-﻿@model List<UniversalDashboard.Models.DTOs.CustomerDto>
-@{
-    ViewData["Title"] = "API Test Results";
+﻿@{
+    ViewBag.Title = "API Performance Check";
 }
 
-<h2>API Test Results</h2>
+<h2>API Performance Test for @ViewBag.ApiName</h2>
 
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Created Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var customer in Model)
-        {
-            <tr>
-                <td>@customer.Id</td>
-                <td>@customer.Username</td>
-                <td>@customer.Email</td>
-                <td>@customer.Created_Date</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div class="card shadow p-3">
+    <p><strong>Status:</strong> @ViewBag.Status</p>
+    <p>
+        <strong>Response Time:</strong>
+        @(ViewBag.ResponseTime >= 0 ? $"{ViewBag.ResponseTime} ms" : "N/A")
+    </p>
+    @if (ViewBag.DataPreview != null)
+    {
+        <p><strong>Response Preview:</strong></p>
+        <pre class="bg-light p-2 rounded">@ViewBag.DataPreview</pre>
+    }
+</div>
 
-<a href="/Sites" class="btn btn-secondary mt-2">Back</a>
+<a href="/Sites" class="btn btn-secondary mt-3">Back to Sites</a>
